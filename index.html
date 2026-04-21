@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YYMMDD × THE PREVIEW SEOUL 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --graphite: #262626;
+  --fog: #F0F0F0;
+  --olive: #CFD89A;
+  --gray: #888888;
+  --border: rgba(240,240,240,0.12);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--graphite);
+  color: var(--fog);
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+.mono {
+  font-family: 'DM Mono', monospace;
+}
+
+.label {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gray);
+}
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 60px 48px;
+  position: relative;
+  border-bottom: 1px solid var(--border);
+}
+
+.hero-nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  padding: 24px 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  background: linear-gradient(to bottom, rgba(38,38,38,0.95) 0%, transparent 100%);
+}
+
+.hero-nav-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  opacity: 0.9;
+  transition: opacity 0.3s;
+}
+.hero-nav-logo:hover { opacity: 1; }
+
+.hero-nav-links {
+  display: flex;
+  gap: 32px;
+}
+
+.hero-nav-links a {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gray);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.hero-nav-links a:hover { color: var(--fog); }
+
+.hero-eyebrow {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--olive);
+  margin-bottom: 24px;
+}
+
+.hero-title {
+  font-size: clamp(36px, 6vw, 72px);
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--fog);
+  max-width: 720px;
+  margin-bottom: 32px;
+  position: relative;
+  z-index: 0;
+}
+
+.hero-title em {
+  font-style: normal;
+  color: var(--olive);
+  font-weight: 500;
+}
+
+.hero-sub {
+  font-family: 'DM Mono', monospace;
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  color: var(--gray);
+  max-width: 520px;
+  line-height: 2;
+}
+
+.hero-line {
+  position: absolute;
+  top: 0; right: 48px; bottom: 0;
+  width: 1px;
+  background: var(--border);
+  z-index: 1;
+}
+
+.hero-scroll {
+  position: absolute;
+  bottom: 60px; right: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  z-index: 2;
+}
+
+.hero-scroll span {
+  font-family: 'DM Mono', monospace;
+  font-size: 8px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gray);
+  writing-mode: vertical-rl;
+}
+
+.scroll-line {
+  width: 1px;
+  height: 60px;
+  background: linear-gradient(to bottom, var(--gray), transparent);
+  animation: scrollAnim 2s ease-in-out infinite;
+}
+
+@keyframes scrollAnim {
+  0%, 100% { opacity: 0.3; transform: scaleY(1); }
+  50% { opacity: 1; transform: scaleY(0.6); }
+}
+
+/* ── HERO ENTRANCE ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-eyebrow {
+  animation: fadeUp 0.8s ease forwards;
+  animation-delay: 0.2s;
+  opacity: 0;
+}
+
+.hero-title {
+  animation: fadeUp 0.9s ease forwards;
+  animation-delay: 0.5s;
+  opacity: 0;
+}
+
+.hero-sub {
+  animation: fadeUp 0.9s ease forwards;
+  animation-delay: 0.9s;
+  opacity: 0;
+}
+
+.hero-scroll {
+  animation: fadeUp 0.8s ease forwards;
+  animation-delay: 1.3s;
+  opacity: 0;
+}
+
+/* ── INTRO ── */
+.intro {
+  padding: 120px 48px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+  border-bottom: 1px solid var(--border);
+}
+
+.intro-label { margin-bottom: 40px; }
+
+.intro-text {
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--fog);
+  letter-spacing: -0.01em;
+}
+
+.intro-text strong {
+  color: var(--olive);
+  font-weight: 400;
+}
+
+.intro-meta {
+  padding-top: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.intro-meta-item .label { margin-bottom: 8px; }
+
+.intro-meta-item p {
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  color: var(--fog);
+  line-height: 1.7;
+}
+
+/* ── SECTION HEADER ── */
+.section-header {
+  padding: 80px 48px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 0;
+}
+
+.section-title {
+  font-size: clamp(28px, 4vw, 48px);
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  color: var(--fog);
+  line-height: 1.15;
+}
+
+.section-title em {
+  font-style: normal;
+  color: var(--olive);
+  font-weight: 500;
+}
+
+/* ── CHAPTERS ── */
+.chapters {
+  padding: 0 48px 120px;
+}
+
+.chapter {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border-bottom: 1px solid var(--border);
+  padding: 80px 0;
+}
+
+.chapter:nth-child(even) {
+  direction: rtl;
+}
+.chapter:nth-child(even) > * {
+  direction: ltr;
+}
+
+.chapter-image-wrap {
+  overflow: hidden;
+  background: rgba(255,255,255,0.03);
+}
+
+.chapter-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.8s ease;
+  min-height: 400px;
+}
+
+.chapter:hover .chapter-image {
+  transform: scale(1.03);
+}
+
+.chapter-content {
+  padding: 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.chapter-num {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  color: var(--olive);
+  margin-bottom: 24px;
+  text-transform: uppercase;
+}
+
+.chapter-artist-kr {
+  font-size: 32px;
+  font-weight: 300;
+  color: var(--fog);
+  letter-spacing: -0.02em;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.chapter-artist-en {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  color: var(--gray);
+  margin-bottom: 24px;
+  text-transform: uppercase;
+}
+
+.chapter-work {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: var(--gray);
+  margin-bottom: 32px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid var(--border);
+}
+
+.chapter-desc {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.9;
+  color: rgba(240,240,240,0.7);
+  margin-bottom: 32px;
+}
+
+/* SCENT 라벨 — 구분선으로 분리 */
+.chapter-scent-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.chapter-scent-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 8px;
+  letter-spacing: 0.25em;
+  color: var(--olive);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.chapter-scent-divider {
+  width: 24px;
+  height: 1px;
+  background: var(--olive);
+  opacity: 0.4;
+  margin-bottom: 10px;
+}
+
+.chapter-scent-note {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--fog);
+  letter-spacing: 0.08em;
+}
+
+/* ── BRAND STATEMENT ── */
+.brand-statement {
+  padding: 120px 48px;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: rgba(207,216,154,0.03);
+}
+
+.statement-inner {
+  max-width: 720px;
+}
+
+.statement-label { margin-bottom: 40px; }
+
+.statement-text {
+  font-size: clamp(20px, 3vw, 32px);
+  font-weight: 300;
+  line-height: 1.6;
+  letter-spacing: -0.01em;
+  color: var(--fog);
+  margin-bottom: 48px;
+}
+
+.statement-text em {
+  font-style: normal;
+  color: var(--olive);
+  font-weight: 400;
+}
+
+.statement-sub {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: rgba(240,240,240,0.65);
+  line-height: 2;
+  letter-spacing: 0.06em;
+  max-width: 480px;
+  word-break: keep-all;
+}
+
+/* ── CONTACT ── */
+.contact {
+  padding: 120px 48px;
+}
+
+.contact-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.contact-left .section-title { margin-bottom: 24px; }
+
+.contact-killing {
+  font-size: 15px;
+  font-weight: 300;
+  color: var(--fog);
+  line-height: 1.8;
+  margin-bottom: 40px;
+  letter-spacing: -0.01em;
+}
+
+.contact-killing em {
+  color: var(--olive);
+  font-style: normal;
+}
+
+.contact-desc {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--gray);
+  line-height: 1.9;
+  letter-spacing: 0.06em;
+  margin-bottom: 40px;
+}
+
+/* ── FORM ── */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 8px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gray);
+}
+
+.form-input, .form-select, .form-textarea {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--border);
+  color: var(--fog);
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  padding: 12px 0;
+  outline: none;
+  transition: border-color 0.3s;
+  width: 100%;
+  letter-spacing: 0.05em;
+}
+
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+  border-color: var(--olive);
+}
+
+.form-select {
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+
+.form-select option {
+  background: var(--graphite);
+  color: var(--fog);
+}
+
+.form-textarea {
+  resize: none;
+  height: 100px;
+  line-height: 1.6;
+}
+
+.form-submit {
+  margin-top: 12px;
+  background: transparent;
+  border: 1px solid var(--olive);
+  color: var(--olive);
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  padding: 16px 32px;
+  cursor: pointer;
+  transition: all 0.3s;
+  align-self: flex-start;
+}
+
+.form-submit:hover {
+  background: var(--olive);
+  color: var(--graphite);
+}
+
+.form-note {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  color: var(--gray);
+  letter-spacing: 0.1em;
+  margin-top: 16px;
+  line-height: 1.6;
+}
+
+/* ── FOOTER ── */
+footer {
+  padding: 40px 48px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-brand {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  color: var(--gray);
+  text-transform: uppercase;
+}
+
+.footer-address {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  color: var(--gray);
+}
+
+.footer-copy {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  color: var(--gray);
+  letter-spacing: 0.1em;
+}
+
+/* ── REVEAL ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── FORM SUCCESS ── */
+.form-success {
+  display: none;
+  padding: 24px;
+  border: 1px solid var(--olive);
+  color: var(--olive);
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  line-height: 1.6;
+}
+
+/* ── MOBILE ── */
+@media (max-width: 768px) {
+  .hero { padding: 48px 24px; }
+  .hero-nav { padding: 20px 24px; }
+  .hero-line, .hero-scroll { right: 24px; }
+  .hero-title { font-size: clamp(32px, 8vw, 52px); max-width: 100%; }
+  .hero-sub { font-size: 12px; max-width: 100%; }
+  .intro { padding: 80px 24px; grid-template-columns: 1fr; gap: 48px; }
+  .intro-text { font-size: 15px; word-break: keep-all; }
+  .section-header { padding: 60px 24px 0; }
+  .chapters { padding: 0 24px 80px; }
+  .chapter { grid-template-columns: 1fr; gap: 0; padding: 60px 0; }
+  .chapter:nth-child(even) { direction: ltr; }
+  .chapter-content { padding: 32px 0; }
+  .chapter-artist-kr { font-size: 26px; }
+  .chapter-desc { font-size: 13px; word-break: keep-all; }
+  .brand-statement { padding: 80px 24px; }
+  .statement-text { word-break: keep-all; }
+  .contact { padding: 80px 24px; }
+  .contact-inner { grid-template-columns: 1fr; gap: 48px; }
+  .contact-killing { word-break: keep-all; }
+  footer { padding: 32px 24px; flex-direction: column; gap: 12px; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="hero-nav">
+  <a href="#" class="hero-nav-logo" aria-label="YYMMDD">
+    <svg viewBox="340 430 1180 220" xmlns="http://www.w3.org/2000/svg" style="height:20px;fill:var(--fog);display:block;">
+      <path d="M1294.2,582.85V430.23h-8.45l-27.45,8.02v7.03h17.23l0,42.27c-3.59-0.81-7.06-1.43-10.43-1.87c-3.37-0.44-6.55-0.66-9.55-0.66c-17.2,0-31.17,5.54-41.89,16.64c-10.73,11.09-16.08,25.56-16.08,43.42c0,15.37,4.08,27.98,12.24,37.82c8.16,9.85,18.54,14.77,31.12,14.77c6.08,0,11.9-1.09,17.46-3.29c5.56-2.19,11.27-5.63,17.13-10.32v11.64h33.27v-8.13l-10.76-1.1L1294.2,582.85z M1275.53,575.72c-4.24,2.63-8.4,4.6-12.46,5.88c-4.07,1.28-8.07,1.92-12.02,1.92c-10.25,0-18.43-3.81-24.54-11.42c-6.11-7.61-9.17-17.9-9.17-30.85c0-13.91,3.53-25.11,10.6-33.6c7.07-8.49,16.34-12.74,27.84-12.74c2.56,0,5.47,0.31,8.73,0.94c3.25,0.62,6.93,1.52,11.03,2.69V575.72z"/>
+      <polygon points="1449.19,584.88 1449.19,430.23 1438.37,430.23 1438.37,441.05 1416.74,441.05 1416.74,451.86 1427.56,451.86 1427.56,509.19 1416.74,509.19 1416.74,520 1427.56,520 1427.56,563.26 1416.74,563.26 1416.74,574.07 1427.56,574.07 1427.56,595.7 1460,595.7 1460,584.88"/>
+      <rect x="1405.93" y="574.07" width="10.82" height="10.81"/>
+      <polygon points="1373.48,574.07 1362.67,574.07 1362.67,509.19 1373.48,509.19 1373.48,498.37 1405.93,498.37 1405.93,487.56 1362.67,487.56 1362.67,498.37 1351.86,498.37 1351.86,509.19 1341.05,509.19 1341.05,574.07 1351.86,574.07 1351.86,584.88 1362.67,584.88 1362.67,595.7 1405.93,595.7 1405.93,584.88 1373.48,584.88"/>
+      <rect x="1405.93" y="498.37" width="10.82" height="10.82"/>
+      <path d="M914.22,582.85v-62.24v-0.66c0-10.61-2.53-18.87-7.58-24.76c-5.05-5.89-12.11-8.84-21.19-8.84c-4.39,0-9.77,1.25-16.14,3.73c-6.37,2.49-13.87,6.29-22.51,11.42c-2.56-4.98-5.95-8.75-10.16-11.31c-4.21-2.56-9.06-3.84-14.55-3.84c-4.54,0-9.72,1.1-15.54,3.29s-12.64,5.6-20.48,10.21v-12.3h-8.57l-26.13,8.01v7.03h16.03v80.26l-3.84,3.62l-12.19,1.1v8.13h49.3v-8.13l-10.76-1.1l-3.84-3.62v-74.22c4.97-2.49,9.57-4.34,13.78-5.54c4.21-1.21,8.14-1.81,11.8-1.81c6.73,0,11.73,1.88,14.99,5.66c3.25,3.77,4.89,9.6,4.89,17.51v58.4l-3.85,3.62l-10.87,1.1v8.13h47.98v-8.13l-10.65-1.1l-3.96-3.62v-74.22c5.05-2.49,9.68-4.34,13.89-5.54c4.21-1.21,8.04-1.81,11.48-1.81c6.88,0,11.97,1.87,15.26,5.6c3.29,3.73,4.94,9.59,4.94,17.57v58.4l-4.06,3.62l-10.54,1.1v8.13h49.08v-8.13l-11.97-1.1L914.22,582.85z"/>
+      <rect x="1006.43" y="509.19" width="10.82" height="10.82"/>
+      <polygon points="995.61,487.56 984.8,487.56 984.8,498.37 963.18,498.37 963.18,509.19 973.99,509.19 973.99,584.89 963.17,584.89 963.17,595.7 1006.43,595.7 1006.43,584.89 995.61,584.89 995.61,530.81 1006.43,530.81 1006.43,520 995.61,520"/>
+      <rect x="1017.25" y="498.37" width="10.81" height="10.82"/>
+      <rect x="1082.13" y="509.19" width="10.82" height="10.82"/>
+      <polygon points="1147.02,498.37 1136.2,498.37 1136.2,487.56 1103.76,487.56 1103.76,498.37 1125.39,498.37 1125.39,584.89 1114.57,584.89 1114.57,595.7 1157.83,595.7 1157.83,584.89 1147.02,584.89"/>
+      <polygon points="1071.32,498.37 1060.5,498.37 1060.5,487.56 1028.06,487.56 1028.06,498.37 1049.69,498.37 1049.69,584.89 1038.87,584.89 1038.87,595.7 1082.13,595.7 1082.13,584.89 1071.32,584.89 1071.32,530.81 1082.13,530.81 1082.13,520 1071.32,520"/>
+      <rect x="1092.95" y="498.37" width="10.81" height="10.82"/>
+      <path d="M535.32,495.9l12.19,0.88l1.75,3.63l-28.11,69.94l-27.01-69.94l2.75-3.63l11.86-0.88v-8.35H460v8.35l13.73,1.31l37.77,97.61c-2.64,7.39-5.51,13.98-8.62,19.77c-3.11,5.78-6.31,10.43-9.6,13.94l-21.63-8.56c-1.91,1.83-3.35,3.77-4.34,5.82c-0.99,2.05-1.48,4.17-1.48,6.37c0,3.73,1.43,6.75,4.29,9.06c2.85,2.31,6.62,3.46,11.31,3.46c7.03,0,13.39-2.98,19.11-8.95c5.71-5.97,11.31-15.58,16.8-28.82l45.01-109.25l13.07-1.75v-8.35h-40.07V495.9z"/>
+      <polygon points="659.01,552.44 648.2,552.44 648.2,520 637.38,520 637.38,498.37 648.2,498.37 648.2,487.56 604.94,487.56 604.94,498.37 615.75,498.37 615.75,520 626.57,520 626.57,552.44 637.38,552.44 637.38,574.07 648.2,574.07 648.2,617.33 659.01,617.33 659.01,595.7 669.82,595.7 669.82,574.07 659.01,574.07"/>
+      <polygon points="637.38,628.15 637.38,628.15 626.57,628.15 615.75,628.15 615.75,649.77 637.38,649.77 637.38,638.96 648.2,638.96 648.2,617.33 637.38,617.33"/>
+      <polygon points="680.64,498.37 691.46,498.37 691.46,520 702.27,520 702.27,498.37 713.08,498.37 713.08,487.56 680.64,487.56"/>
+      <rect x="680.64" y="520" width="10.82" height="32.44"/>
+      <rect x="669.82" y="552.44" width="10.82" height="21.63"/>
+    </svg>
+  </a>
+  <div class="hero-nav-links">
+    <a href="#chapters">Collection</a>
+    <a href="#about">Brand</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-line"></div>
+  <div class="hero-eyebrow mono">The Preview Seoul 2026</div>
+  <h1 class="hero-title">
+    작품이 향이 되는 방식,<br>
+    <em>날짜가 기억이 되는 방식</em>
+  </h1>
+  <p class="hero-sub">
+    네 명의 작가, 네 개의 날짜, 네 가지 기억.<br>
+    YYMMDD가 갤러리의 언어로 확장되는 첫 번째 시도입니다.
+  </p>
+  <div class="hero-scroll">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section class="intro reveal" id="about">
+  <div>
+    <p class="label intro-label">ABOUT YYMMDD</p>
+    <p class="intro-text">
+      <strong>YYMMDD는 날짜를 향으로 기록하는 브랜드</strong>입니다.<br><br>
+      제주를 거점으로 시작해, 외국인 방문객과 컬렉터들의 지지를 받으며 성장해온 이 브랜드는 이번 더 프리뷰 서울 2026을 통해 처음으로 갤러리와의 접점을 만듭니다.<br><br>
+      커스텀 날짜가 새겨진 틴케이스, 작가의 작품 세계를 향으로 번역한 에디션. YYMMDD는 기억과 감각이 만나는 지점에서, 갤러리가 할 수 있는 일의 범위를 넓힙니다.
+    </p>
+  </div>
+  <div class="intro-meta">
+    <div class="intro-meta-item">
+      <p class="label">행사 정보</p>
+      <p>더 프리뷰 서울 2026<br>2026. 04. 23 — 26<br>성수 에스팩토리</p>
+    </div>
+    <div class="intro-meta-item">
+      <p class="label">Contact</p>
+      <p>godot@godot-global.com</p>
+    </div>
+  </div>
+</section>
+
+<!-- CHAPTERS HEADER -->
+<div class="section-header reveal">
+  <h2 class="section-title">작품이 향이 되는 방식<br><em>네 개의 챕터</em></h2>
+</div>
+
+<!-- CHAPTERS -->
+<section class="chapters" id="chapters">
+
+  <!-- Chapter 01 -->
+  <article class="chapter reveal">
+    <div class="chapter-image-wrap">
+      <img class="chapter-image" src="https://raw.githubusercontent.com/HONGKI-CHOI/yymmdd_preview/main/%EC%9C%A0%EC%88%98%EC%A7%80_%ED%8B%B4%EC%BC%80%EC%9D%B4%EC%8A%A4%EB%AA%A9%EC%97%85-CT%2001.png" alt="유수지 틴케이스 목업">
+    </div>
+    <div class="chapter-content">
+      <p class="chapter-num">Chapter 01</p>
+      <h3 class="chapter-artist-kr">유수지</h3>
+      <p class="chapter-artist-en">Yoo Suzy</p>
+      <p class="chapter-work">Friends, 2025 · Oil on canvas</p>
+      <p class="chapter-desc">
+        일상 속 관계의 온도를 캔버스에 담아온 유수지 작가의 시선은 언제나 '함께함'에 닿아 있습니다. YYMMDD는 그 온기를 향으로 옮겨, 누군가와 함께했던 날의 기억을 오래도록 간직할 수 있는 형태로 번역했습니다.
+      </p>
+      <div class="chapter-scent-wrapper">
+        <p class="chapter-scent-label">Scent Profile</p>
+        <div class="chapter-scent-divider"></div>
+        <p class="chapter-scent-note">Citrus · Fresh</p>
+      </div>
+    </div>
+  </article>
+
+  <!-- Chapter 02 -->
+  <article class="chapter reveal">
+    <div class="chapter-image-wrap">
+      <img class="chapter-image" src="https://raw.githubusercontent.com/HONGKI-CHOI/yymmdd_preview/main/%EA%B9%80%EC%A7%80%EC%9C%A4_%ED%8B%B4%EC%BC%80%EC%9D%B4%EC%8A%A4%EB%AA%A9%EC%97%85-CT%2002.png" alt="김지윤 틴케이스 목업">
+    </div>
+    <div class="chapter-content">
+      <p class="chapter-num">Chapter 02</p>
+      <h3 class="chapter-artist-kr">김지윤</h3>
+      <p class="chapter-artist-en">Kim Jiyoon</p>
+      <p class="chapter-work">가을숨결, 2025 · Mixed media</p>
+      <p class="chapter-desc">
+        계절의 전환점을 감각적으로 포착하는 김지윤 작가의 작업은 사라지는 것들에 대한 섬세한 애도입니다. YYMMDD는 그 깊고 고요한 서사를 따뜻하고 묵직한 향의 레이어로 구현했습니다.
+      </p>
+      <div class="chapter-scent-wrapper">
+        <p class="chapter-scent-label">Scent Profile</p>
+        <div class="chapter-scent-divider"></div>
+        <p class="chapter-scent-note">Amber · Sandalwood</p>
+      </div>
+    </div>
+  </article>
+
+  <!-- Chapter 03 -->
+  <article class="chapter reveal">
+    <div class="chapter-image-wrap">
+      <img class="chapter-image" src="https://raw.githubusercontent.com/HONGKI-CHOI/yymmdd_preview/main/%ED%95%9C%EC%9E%AC%ED%98%81_%ED%8B%B4%EC%BC%80%EC%9D%B4%EC%8A%A4%EB%AA%A9%EC%97%85-CT%2003.png" alt="한재혁 틴케이스 목업">
+    </div>
+    <div class="chapter-content">
+      <p class="chapter-num">Chapter 03</p>
+      <h3 class="chapter-artist-kr">한재혁</h3>
+      <p class="chapter-artist-en">Han Jaehyuk</p>
+      <p class="chapter-work">tipping point-形-20, 2025 · Installation</p>
+      <p class="chapter-desc">
+        구조와 균형의 임계점을 탐구하는 한재혁 작가의 조형 언어는 팽팽한 긴장과 고요함 사이를 오갑니다. YYMMDD는 그 경계의 순간을 깨끗하고 중성적인 향으로 담아냈습니다.
+      </p>
+      <div class="chapter-scent-wrapper">
+        <p class="chapter-scent-label">Scent Profile</p>
+        <div class="chapter-scent-divider"></div>
+        <p class="chapter-scent-note">Clean · Musk</p>
+      </div>
+    </div>
+  </article>
+
+  <!-- Chapter 04 -->
+  <article class="chapter reveal">
+    <div class="chapter-image-wrap">
+      <img class="chapter-image" src="https://raw.githubusercontent.com/HONGKI-CHOI/yymmdd_preview/main/%EA%B9%80%EC%97%B0%ED%99%8D_%ED%8B%B4%EC%BC%80%EC%9D%B4%EC%8A%A4%EB%AA%A9%EC%97%85-CT%2004.png" alt="김연홍 틴케이스 목업">
+    </div>
+    <div class="chapter-content">
+      <p class="chapter-num">Chapter 04</p>
+      <h3 class="chapter-artist-kr">김연홍</h3>
+      <p class="chapter-artist-en">Kim Yeonhong</p>
+      <p class="chapter-work">Edge of Bloom, 2024 · Painting</p>
+      <p class="chapter-desc">
+        피어남과 지는 것 사이의 아름다움을 화면에 옮기는 김연홍 작가의 작업은 존재의 절정을 응시합니다. YYMMDD는 그 찰나의 감각을 플로럴과 파우더리의 조화로 번역했습니다.
+      </p>
+      <div class="chapter-scent-wrapper">
+        <p class="chapter-scent-label">Scent Profile</p>
+        <div class="chapter-scent-divider"></div>
+        <p class="chapter-scent-note">Floral · Powdery</p>
+      </div>
+    </div>
+  </article>
+
+</section>
+
+<!-- BRAND STATEMENT -->
+<section class="brand-statement reveal">
+  <div class="statement-inner">
+    <p class="label statement-label">WHY YYMMDD</p>
+    <p class="statement-text">
+      갤러리는 작품을 전시합니다.<br>
+      YYMMDD는 그 작품을<br>
+      <em>기억으로 가져가는 방법</em>을 만듭니다.
+    </p>
+    <p class="statement-sub">
+      전시가 끝난 뒤에도, 관람객의 일상 속에서 작품이 계속 살아 숨쉬는 방식.<br>
+      날짜가 새겨진 틴케이스 하나가 갤러리 경험을 오래도록 잇는 연결고리가 됩니다.<br><br>
+      YYMMDD는 갤러리의 언어를 존중하면서, 그 언어가 닿지 못했던 곳까지 함께 가고 싶습니다.
+    </p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact reveal" id="contact">
+  <div class="contact-inner">
+    <div class="contact-left">
+      <h2 class="section-title">Let's make something<br><em>for your collectors.</em></h2>
+      <p class="contact-killing">
+        제안의 형태는 중요하지 않습니다.<br>
+        갤러리의 기억이 컬렉터의 일상에 스며들 수 있다면,<br>
+        방법은 함께 찾겠습니다.
+      </p>
+      <p class="contact-desc">
+        갤러리 입점 · 한정판 공동 기획 · VIP 기프트 제작<br><br>
+        godot@godot-global.com
+      </p>
+    </div>
+    <div class="contact-right">
+      <form class="contact-form" id="contactForm">
+        <div class="form-group">
+          <label class="form-label">갤러리 / 기관명</label>
+          <input type="text" class="form-input" name="gallery" placeholder="Gallery Name" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">담당자 성함</label>
+          <input type="text" class="form-input" name="name" placeholder="Your Name" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">연락처</label>
+          <input type="text" class="form-input" name="phone" placeholder="Phone or Email">
+        </div>
+        <div class="form-group">
+          <label class="form-label">이메일</label>
+          <input type="email" class="form-input" name="email" placeholder="email@gallery.com" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">협업 형태</label>
+          <select class="form-select" name="type">
+            <option value="">Select Type</option>
+            <option value="retail">갤러리 굿즈 입점</option>
+            <option value="edition">한정판 공동 기획</option>
+            <option value="gift">VIP 기프트 제작</option>
+            <option value="other">기타 제안</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">추가 전달 사항</label>
+          <textarea class="form-textarea" name="message" placeholder="추가로 전달할 내용이 있으시면 남겨주세요."></textarea>
+        </div>
+        <button type="submit" class="form-submit">Send Message →</button>
+      </form>
+      <div class="form-success" id="formSuccess">
+        메시지가 전송되었습니다.<br>빠른 시일 내에 연락드리겠습니다.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-brand">YYMMDD / YEARMONTHDAY</span>
+  <span class="footer-address">905, 76 Yeonmujang-gil, Seongdong-gu, Seoul, Korea</span>
+  <span class="footer-copy">© 2026 GODOT Global. All rights reserved.</span>
+</footer>
+
+<script>
+// Reveal on scroll
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1 });
+reveals.forEach(el => observer.observe(el));
+
+// Form submit — Formspree
+const form = document.getElementById('contactForm');
+const success = document.getElementById('formSuccess');
+if (form) {
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const data = new FormData(form);
+    try {
+      const res = await fetch('https://formspree.io/f/xnjlzown', {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        form.style.display = 'none';
+        success.style.display = 'block';
+      }
+    } catch(err) {
+      console.error(err);
+    }
+  });
+}
+</script>
+</body>
+</html>
